@@ -5,7 +5,7 @@ import lombok.*;
 import java.util.UUID;
 
 /**
- *  Lombok annotations
+ * Lombok annotations
  */
 
 @Data

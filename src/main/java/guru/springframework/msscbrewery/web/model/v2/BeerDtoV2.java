@@ -1,22 +1,20 @@
-package guru.springframework.msscbrewery.web.model;
+package guru.springframework.msscbrewery.web.model.v2;
 
 import lombok.*;
 
 import java.util.UUID;
 
 /**
- * Lombok annotations
+ * Created by jt on 2019-04-23.
  */
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class BeerDto {
-
+public class BeerDtoV2 {
     private UUID id;
     private String beerName;
-    private String beerStyle;
+    private BeerStyle beerStyle;
     private Long upc;
 }
