@@ -50,6 +50,7 @@ public class CustomerController {
     @DeleteMapping("/{customerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable("customerId") UUID customerId) {
+        log.info("deleteById - customerId: " + customerId);
         customerService.deleteById(customerId);
     }
 }

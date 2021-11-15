@@ -4,6 +4,7 @@ import guru.springframework.msscbrewery.web.model.BeerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -36,5 +37,21 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public void deleteById(UUID beerId) {
         log.debug("Deleting a beer...");
+    }
+
+    @Override
+    public List<BeerDto> getAllBeers() {
+        return List.of(BeerDto.builder()
+                        .id(UUID.randomUUID())
+                        .beerName("Estrella Galicia")
+                        .beerStyle("Pale Ale")
+                        .upc(1L)
+                        .build(),
+                BeerDto.builder()
+                        .id(UUID.randomUUID())
+                        .beerName("Damm")
+                        .beerStyle("Pale Ale")
+                        .upc(1L)
+                        .build());
     }
 }
