@@ -5,17 +5,18 @@ import lombok.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /**
  * Lombok annotations
  */
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
+@EqualsAndHashCode
 public class BeerDto {
     /**
      *  @Null The annotated element must be null. Accepts any type.
@@ -36,4 +37,7 @@ public class BeerDto {
      */
     @Positive(message = "You should specify a valid upc")
     private Long upc;
+
+    private OffsetDateTime createdDate;
+    private OffsetDateTime lastUpdatedDate;
 }
